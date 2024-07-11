@@ -1,0 +1,43 @@
+{
+    "name": "pikachu",
+    "vuln": "CSRF_get_login",
+    "version": "",
+    "comment": "仅需要多次发包验证的设置mainRequest字段2,否则都以1为准,多次发包依次延续",
+    "type": "3",
+    "mainRequest": {
+        "1": {
+            "request": {
+                "host": "",
+                "method": "GET",
+                "path": "/vul/csrf/csrfget/csrf_get_login.php?username=vince&password=123456&submit=Login",
+                "cookie": "",
+                "requestheader": "",
+                "requestbody": ""
+            },
+            "response": {
+                "statuscode": 200,
+                "statusmessage": "",
+                "responsetime": "",
+                "responseheader": "",
+                "responsebody": "hello,vince"
+            }
+        },
+        "2": {
+            "request": {
+                "host": "",
+                "method": "GET",
+                "path": "/vul/csrf/csrfget/csrf_get_edit.php?sex=女&phonenum=1111&add=196782&email=1111&submit=submit",
+                "cookie": "",
+                "requestheader": "",
+                "requestbody": ""
+            },
+            "response": {
+                "statuscode": 200,
+                "statusmessage": "",
+                "responsetime": "",
+                "responseheader": "",
+                "responsebody": "<p class=\"per_add\">住址:196782</p>"
+            }
+        }
+    }
+}

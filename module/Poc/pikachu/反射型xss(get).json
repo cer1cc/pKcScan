@@ -1,0 +1,26 @@
+{
+    "name": "pikachu",
+    "vuln": "反射型xss_get",
+    "version": "",
+    "comment": "仅需要多次发包验证的设置mainRequest字段2,否则都以1为准,多次发包依次延续",
+    "type": "1",
+    "mainRequest": {
+        "1": {
+            "request": {
+                "host": "",
+                "method": "GET",
+                "path": "/vul/xss/xss_reflected_get.php?message=%3cscript%3ealert('xss')%3c%2fscript%3e&submit=submit",
+                "cookie": "",
+                "requestheader": "",
+                "requestbody": ""
+            },
+            "response": {
+                "statuscode": 200,
+                "statusmessage": "[+] 存在xx型sql注入",
+                "responsetime": "",
+                "responseheader": "",
+                "responsebody": "<script>alert('xss')</script>"
+            }
+        }
+    }
+}

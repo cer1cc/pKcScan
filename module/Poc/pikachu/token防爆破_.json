@@ -1,0 +1,26 @@
+{
+    "name": "pikachu",
+    "vuln": "token防爆破",
+    "version": "",
+    "comment": "仅需要多次发包验证的设置mainRequest字段2,否则都以1为准,多次发包依次延续",
+    "type": "2",
+    "mainRequest": {
+        "1": {
+            "request": {
+                "host": "",
+                "method": "POST",
+                "path": "/vul/burteforce/bf_token.php",
+                "cookie": "",
+                "requestheader": {"Content-Type": "application/x-www-form-urlencoded"},
+                "requestbody": "username=admin15&password=§12123§&token=§3365266c2eb856bc277042792§&submit=Login"
+            },
+            "response": {
+                "statuscode": 200,
+                "statusmessage": "",
+                "responsetime": "",
+                "responseheader": "",
+                "responsebody": "login success"
+            }
+        }
+    }
+}

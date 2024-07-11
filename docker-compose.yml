@@ -1,0 +1,19 @@
+# pKcScan © 2024.7.11 by cer1cc is licensed under CC BY-NC-SA 4.0 
+version: "3"
+services:
+  mongo:
+    image: mongo
+    container_name: planetSpider-mongo
+    restart: unless-stopped
+    ports:
+      - "27017:27017"
+    volumes:
+      - database:/data/db
+    networks:
+      - app_network
+
+networks:
+  app_network:
+
+volumes:
+  database:

